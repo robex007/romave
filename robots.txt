@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://robex007.github.io/romave/sitemap.xml
