@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Romave | Construcciones eléctricas, civiles y electromecánicas en México</title>
-  <meta name="description" content="Con 40 años de experiencia, Romave construye, instala y pone en marcha tiendas, naves industriales y aeropuertos en todo México: media tensión y gestión con CFE, obra civil, HVAC, hidrosanitaria y sistemas especiales. Oficinas en Pachuca, CDMX y Querétaro." />
-  <meta name="theme-color" content="#163C77" />
-  <!-- Dirección de publicación: si Romave mueve romave.com a este sitio, cambiar aquí, en og:url/og:image y en sitemap.xml -->
+  <title>Romave | Construcción eléctrica, civil y electromecánica en todo México</title>
+  <meta name="description" content="Con 40 años de experiencia, Romave construye, instala y pone en marcha tiendas, naves industriales y aeropuertos en todo México: media y alta tensión con CFE, obra civil, montaje de maquinaria, sistemas especiales, hidrosanitaria y HVAC. Oficinas en Pachuca, CDMX y Querétaro." />
+  <meta name="theme-color" content="#D5D9DD" />
+  <!-- Dirección de publicación: si Romave mueve romave.com a este sitio, cambiar aquí, en og:url/og:image, JSON-LD y sitemap.xml -->
   <link rel="canonical" href="https://robex007.github.io/romave/" />
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png" />
@@ -20,7 +20,7 @@
   <meta property="og:image" content="https://robex007.github.io/romave/img/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Logo de Romave junto al corte de una nave con sus instalaciones eléctricas, civiles y electromecánicas" />
+  <meta property="og:image:alt" content="Placa de datos de Romave con sus tres gerencias y oficinas" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://robex007.github.io/romave/img/og-image.png" />
   <script type="application/ld+json">
@@ -28,7 +28,7 @@
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     "name": "Romave",
-    "description": "Construcción eléctrica, civil y electromecánica para tiendas, naves industriales y aeropuertos en todo México: media tensión y gestión con CFE, obra civil, montaje de maquinaria, sistemas especiales, hidrosanitaria y HVAC.",
+    "description": "Construcción eléctrica, civil y electromecánica para tiendas, naves industriales, aeropuertos y vivienda en todo México: media y alta tensión con gestión ante CFE, obra civil, montaje de maquinaria, sistemas especiales, hidrosanitaria y HVAC.",
     "url": "https://robex007.github.io/romave/",
     "logo": "https://robex007.github.io/romave/img/favicon-192.png",
     "image": "https://robex007.github.io/romave/img/og-image.png",
@@ -38,7 +38,8 @@
     "sameAs": [
       "https://www.facebook.com/RomaveMX/",
       "https://www.instagram.com/romavemx/",
-      "https://twitter.com/gruporomave"
+      "https://twitter.com/gruporomave",
+      "https://open.spotify.com/show/2kDYtlNfNlfEg2HmCFyns2"
     ],
     "department": [
       { "@type": "GeneralContractor", "name": "Romave Pachuca", "address": { "@type": "PostalAddress", "addressLocality": "Pachuca de Soto", "addressRegion": "Hidalgo", "addressCountry": "MX" } },
@@ -49,272 +50,435 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=Michroma&display=swap" rel="stylesheet" />
   <style>
+    /* ============================================================
+       Mundo: placa de datos. Gabinete gris, placas de aluminio
+       remachadas con texto grabado, placas de esmalte a color pleno.
+       ============================================================ */
     :root {
-      --paper: #F3F5F8;
-      --white: #FFFFFF;
-      --ink: #0F2340;
-      --muted: #56657D;
-      --line: #D5DCE6;
-      --navy: #163C77;
-      --blue: #16579F;
-      --sky: #1692CA;
-      --red: #D6282E;
-      /* colores por especialidad, como en un plano coordinado */
+      --gabinete: #D5D9DD;          /* gris de gabinete eléctrico (RAL 7035 frío) */
+      --gabinete-sombra: #C3C8CD;
+      --tablero: #262C33;           /* lámina interior de tablero, para el muro de clientes */
+      --tinta: #15191E;             /* grabado */
+      --tinta-2: #353C45;           /* etiquetas grabadas */
+      --canto: #A2AAB2;             /* canto del aluminio */
+      --azul: #163C77;              /* esmalte civil / marca */
+      --azul-2: #16579F;
+      --rojo: #BF1E2D;              /* esmalte eléctrica / acción */
+      --rojo-2: #D6282E;
+      --verde: #1B6A50;             /* esmalte electromecánica */
+      /* colores de disciplina (los del diagrama) */
       --c-electrica: #D6282E;
       --c-civil: #163C77;
       --c-mecanica: #C77800;
       --c-especiales: #7A4FB5;
       --c-hidro: #1692CA;
       --c-hvac: #1C9C7A;
-      --max: 1200px;
       --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --max: 1240px;
+      --display: "Michroma", "Barlow", sans-serif;
+      --campo: "Barlow Semi Condensed", "Barlow", sans-serif;
+      --texto: "Barlow", system-ui, sans-serif;
+      /* remaches en las cuatro esquinas de una placa */
+      --remache: #858D95 0 3px, #F4F6F7 3.5px 4.3px, rgba(0,0,0,.2) 4.8px, transparent 5.6px;
+      --remaches:
+        radial-gradient(circle at 15px 15px, var(--remache)),
+        radial-gradient(circle at calc(100% - 15px) 15px, var(--remache)),
+        radial-gradient(circle at 15px calc(100% - 15px), var(--remache)),
+        radial-gradient(circle at calc(100% - 15px) calc(100% - 15px), var(--remache));
+      /* aluminio cepillado: textura raster real (img/aluminio.jpg, generada en _fuente/Aluminio.cs) */
+      --aluminio: url("img/aluminio.jpg") 0 0 / 1200px 800px repeat #DDE0E3;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scrollbar-color: #8A929A var(--gabinete); }
     body {
-      font-family: "Archivo", system-ui, sans-serif;
-      font-variation-settings: "wdth" 100;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.6;
+      font-family: var(--texto); font-size: 1.0625rem; line-height: 1.55; color: var(--tinta);
+      background-color: var(--gabinete);
+      /* textura de pintura electrostática: grano muy fino */
+      background-image: radial-gradient(rgba(0,0,0,.035) 1px, transparent 1.2px);
+      background-size: 5px 5px;
       -webkit-font-smoothing: antialiased;
     }
     img { display: block; max-width: 100%; height: auto; }
     a { color: inherit; text-underline-offset: 3px; }
-    ul { list-style: none; }
-    html { scrollbar-color: #9AA6B8 var(--paper); }
-    ::selection { background: #CFE3F5; color: var(--ink); }
-    :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 4px; }
+    ul, ol { list-style: none; }
+    ::selection { background: #BFD6EE; color: var(--tinta); }
+    :focus-visible { outline: 3px solid var(--azul-2); outline-offset: 3px; border-radius: 4px; }
     .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; text-wrap: balance; }
 
-    h1, h2, h3 { font-variation-settings: "wdth" 118; line-height: 1.05; letter-spacing: -0.01em; }
-    h1 { font-size: clamp(2.3rem, 5.2vw, 3.7rem); font-weight: 800; }
-    h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 800; }
-    h3 { font-size: 1.35rem; font-weight: 700; }
-    .lead { font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--muted); max-width: 34em; }
-
-    /* ---------- Botones ---------- */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      font: inherit; font-weight: 700; font-size: 1rem; text-decoration: none;
-      padding: 14px 22px; border-radius: 6px; border: 2px solid transparent; cursor: pointer;
-      transition: background-color .2s, color .2s, border-color .2s, transform 160ms var(--ease-out);
+    /* ---------- Placa de aluminio ---------- */
+    .placa {
+      position: relative;
+      background: var(--remaches), var(--aluminio);
+      border: 1px solid var(--canto); border-radius: 7px;
+      box-shadow: 0 1px 1px rgba(21,25,30,.16), 0 3px 6px -2px rgba(21,25,30,.32);
     }
-    .btn svg { width: 20px; height: 20px; flex: none; fill: currentColor; }
-    .btn-primary { background: var(--navy); color: #fff; }
-    .btn-line { border-color: var(--navy); color: var(--navy); background: transparent; }
-    /* respuesta al toque: todo lo que se presiona se hunde un poco */
-    .btn:active, .leyenda button:active, .wa-float:active { transform: scale(0.97); }
-
-    /* ---------- Header ---------- */
-    header { position: sticky; top: 0; z-index: 20; background: var(--white); border-bottom: 1px solid var(--line); }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
-    .nav img { height: 40px; width: auto; }
-    .nav .btn { padding: 10px 16px; font-size: .95rem; }
-    /* navegación por secciones: solo en escritorio, en celular basta el botón flotante */
-    .secciones { display: none; gap: 4px; margin-left: auto; }
-    .secciones a { font-weight: 600; font-size: .95rem; text-decoration: none; padding: 10px 12px; border-radius: 6px; transition: background-color .2s; }
-
-    /* ---------- Hero con corte de obra ---------- */
-    .hero { padding: 48px 0 56px; }
-    .hero-grid { display: grid; gap: 36px; }
-    .hero h1 { max-width: 14ch; text-wrap: balance; }
-    .hero .lead { margin-top: 18px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-
-    .plano {
-      background-color: var(--white);
-      background-image:
-        linear-gradient(var(--paper) 1px, transparent 1px),
-        linear-gradient(90deg, var(--paper) 1px, transparent 1px);
-      background-size: 24px 24px;
-      border: 1px solid var(--line); border-radius: 8px;
-      padding: 14px 14px 18px;
+    /* grabado: tinta en el surco, sin relieve falso */
+    .grabado { color: var(--tinta); }
+    /* ---------- Placa de esmalte ---------- */
+    .esmalte {
+      position: relative; color: #fff;
+      background:
+        var(--remaches),
+        var(--color);
+      border: 1px solid color-mix(in srgb, var(--color) 70%, #000);
+      border-radius: 7px;
+      box-shadow: 0 1px 1px rgba(21,25,30,.2), 0 3px 6px -2px rgba(21,25,30,.38);
     }
-    .plano svg { width: 100%; height: auto; display: block; }
-    .plano svg .layer { transition: opacity 200ms ease; }
-    .plano svg[data-active] .layer { opacity: .14; }
-    .plano svg[data-active] .layer.on { opacity: 1; }
-    .plano svg .base { stroke: #9AA6B8; }
-    .plano-help { font-size: .9rem; color: var(--muted); margin: 10px 4px 10px; }
-    .leyenda { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
-    .leyenda button {
-      display: flex; align-items: center; gap: 10px; text-align: left;
-      font: inherit; font-size: .95rem; font-weight: 600; color: var(--ink);
-      background: transparent; border: 1px solid transparent; border-radius: 6px;
-      min-height: 44px; padding: 8px 10px; cursor: pointer; transition: background-color .2s, border-color .2s, transform 160ms var(--ease-out);
+    .esmalte--rojo { --color: var(--rojo); }
+    .esmalte--azul { --color: var(--azul); }
+    .esmalte--verde { --color: var(--verde); }
+
+    /* ---------- Campos de placa: etiqueta grabada / valor ---------- */
+    .campos { display: grid; grid-template-columns: 1fr; }
+    .campos > div { padding: 12px 0; border-top: 1px solid rgba(0,0,0,.16); }
+    .esmalte .campos > div { border-top-color: rgba(255,255,255,.22); }
+    .campos dt, .etiqueta {
+      font-family: var(--campo); font-weight: 600; font-size: .78rem; letter-spacing: .09em; text-transform: uppercase;
+      color: var(--tinta-2);
     }
-    .leyenda button::before { content: ""; width: 22px; height: 4px; border-radius: 2px; background: var(--c); flex: none; }
-    .leyenda button[aria-pressed="true"] { background: var(--paper); border-color: var(--line); }
+    .esmalte .campos dt, .esmalte .etiqueta { color: rgba(255,255,255,.78); }
+    .campos dd { font-weight: 600; font-size: 1.06rem; line-height: 1.35; margin-top: 2px; }
 
-
-    /* ---------- Clientes ---------- */
-    .clientes { background: var(--navy); color: #fff; padding: 44px 0; }
-    .clientes h2 { font-size: clamp(1.4rem, 2.6vw, 1.8rem); margin-bottom: 22px; }
-    .sectores { display: grid; gap: 22px; }
-    .sectores dt { font-size: .95rem; color: #9CC7EA; font-weight: 600; }
-    .sectores dd { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; font-variation-settings: "wdth" 110; line-height: 1.3; margin-top: 4px; }
-
-    /* ---------- Especialidades ---------- */
-    section.bloque { padding: 72px 0; }
-    .intro { max-width: 40em; margin-bottom: 40px; }
-    .intro .lead { margin-top: 14px; }
-    .gerencia { display: grid; gap: 24px; padding: 40px 0; border-top: 1px solid var(--line); }
-    .gerencia:last-child { border-bottom: 1px solid var(--line); }
-    .g-foto { border-radius: 6px; overflow: hidden; aspect-ratio: 3 / 2; background: var(--line); }
-    .g-foto img { width: 100%; height: 100%; object-fit: cover; }
-    .gerencia h3 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
-    .g-texto > p { color: var(--muted); margin-top: 10px; max-width: 34em; }
-    /* mini corte: la misma obra del hero con las capas de esta gerencia encendidas (lo arma el script) */
-    .mini-corte { display: none; max-width: 340px; margin-top: 16px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--white); }
-    .mini-corte svg { width: 100%; height: auto; display: block; }
-    .mini-corte .layer { opacity: .12; }
-    .mini-corte .layer.on { opacity: 1; }
-    .mini-corte .base { stroke: #9AA6B8; }
-    .disciplinas { margin-top: 20px; display: grid; gap: 14px; }
-    .disciplinas > div { display: grid; grid-template-columns: 22px 1fr; column-gap: 12px; }
-    .disciplinas > div::before { content: ""; grid-row: 1 / span 2; width: 22px; height: 4px; margin-top: .6em; border-radius: 2px; background: var(--c); }
-    .disciplinas dt { font-weight: 700; }
-    .disciplinas dd { color: var(--muted); }
-    .gerencia .btn { margin-top: 24px; }
-
-    /* ---------- CFE ---------- */
-    .cfe { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .cfe-grid { display: grid; gap: 32px; align-items: center; }
-    .pasos { counter-reset: paso; display: grid; gap: 14px; }
-    .pasos li { counter-increment: paso; display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; }
-    .pasos li::before {
-      content: counter(paso); width: 40px; height: 40px; border-radius: 50%;
-      border: 2px solid var(--red); color: var(--red); font-weight: 800;
-      display: grid; place-items: center;
+    /* ---------- Placas de acción (botones) ---------- */
+    .accion {
+      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+      min-height: 52px; padding: 14px 24px;
+      font-family: var(--campo); font-weight: 700; font-size: 1.05rem; letter-spacing: .02em; text-decoration: none;
+      cursor: pointer; border-radius: 7px;
+      transition: transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out), filter .2s;
     }
-    .pasos strong { display: block; font-size: 1.05rem; }
-    .pasos span { color: var(--muted); font-size: .95rem; }
-
-    /* ---------- Obras ---------- */
-    .obras { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
-    .obras figure { margin: 0; }
-    .obras img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: var(--line); }
-    .obras figcaption { margin-top: 10px; font-size: .95rem; line-height: 1.35; }
-    .obras figcaption strong { display: block; font-weight: 600; }
-    .tags { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; font-size: .85rem; color: var(--muted); }
-    .tags li { display: flex; align-items: center; gap: 6px; }
-    .tags li::before { content: ""; width: 14px; height: 3px; border-radius: 2px; background: var(--c); }
-    .obras .ancha { grid-column: 1 / -1; }
-    .obras .ancha img { aspect-ratio: 16 / 7; }
-
-    /* ---------- Oficinas y contacto ---------- */
-    .contacto { background: var(--ink); color: #fff; }
-    .contacto .lead { color: #B9C4D6; }
-    .oficinas { display: grid; gap: 18px; margin: 36px 0; }
-    .oficinas li { border-top: 1px solid rgba(255,255,255,.2); padding-top: 14px; }
-    .oficinas strong { display: block; font-size: 1.15rem; font-variation-settings: "wdth" 110; }
-    .oficinas span { color: #B9C4D6; font-size: .95rem; }
-    .contacto .btn-primary { background: #fff; color: var(--navy); }
-
-    footer { background: var(--ink); color: #B9C4D6; border-top: 1px solid rgba(255,255,255,.1); padding: 26px 0 90px; font-size: .9rem; }
-    .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
-    .redes { display: flex; gap: 10px; }
-    .redes a { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); transition: background-color .2s; }
-    .redes svg { width: 18px; height: 18px; fill: #fff; }
-
-    /* botón flotante de WhatsApp */
-    .wa-float {
-      position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 30;
-      width: 58px; height: 58px; border-radius: 50%; background: var(--navy); border: 2px solid #fff;
-      display: grid; place-items: center; box-shadow: 0 6px 20px rgba(15,35,64,.3);
-      transition: transform 160ms var(--ease-out);
+    .accion svg { width: 22px; height: 22px; flex: none; fill: currentColor; }
+    .accion.esmalte { --remache: #F3D5D8 0 1.6px, rgba(0,0,0,.25) 2.2px, transparent 2.8px; }
+    .accion.esmalte {
+      background:
+        radial-gradient(circle at 9px 9px, var(--remache)),
+        radial-gradient(circle at calc(100% - 9px) 9px, var(--remache)),
+        radial-gradient(circle at 9px calc(100% - 9px), var(--remache)),
+        radial-gradient(circle at calc(100% - 9px) calc(100% - 9px), var(--remache)),
+        linear-gradient(180deg, rgba(255,255,255,.12), rgba(0,0,0,.10)),
+        var(--color);
+      padding-left: 28px; padding-right: 28px;
     }
+    .accion.placa { color: var(--tinta); border: 1px solid var(--canto); box-shadow: 0 1px 1px rgba(21,25,30,.16), 0 3px 6px -2px rgba(21,25,30,.32); }
+    .accion.placa {
+      background:
+        radial-gradient(circle at 9px 9px, #8A929A 0 1.6px, rgba(0,0,0,.2) 2.2px, transparent 2.8px),
+        radial-gradient(circle at calc(100% - 9px) 9px, #8A929A 0 1.6px, rgba(0,0,0,.2) 2.2px, transparent 2.8px),
+        radial-gradient(circle at 9px calc(100% - 9px), #8A929A 0 1.6px, rgba(0,0,0,.2) 2.2px, transparent 2.8px),
+        radial-gradient(circle at calc(100% - 9px) calc(100% - 9px), #8A929A 0 1.6px, rgba(0,0,0,.2) 2.2px, transparent 2.8px),
+        var(--aluminio);
+      padding-left: 28px; padding-right: 28px;
+    }
+    /* la placa se hunde al presionarla, como un botón de tablero */
+    .accion:active { transform: translateY(1px) scale(.985); box-shadow: inset 0 1px 2px rgba(0,0,0,.25), 0 2px 4px -2px rgba(21,25,30,.4); }
 
-    /* hover solo con mouse: en celular el hover se queda "pegado" después de tocar */
+    /* ---------- Barra superior ---------- */
+    .barra {
+      position: sticky; top: 0; z-index: 30;
+      background: var(--aluminio);
+      border-bottom: 1px solid var(--canto);
+      box-shadow: 0 2px 5px -2px rgba(21,25,30,.3);
+    }
+    .barra .wrap { display: flex; align-items: center; gap: 20px; height: 64px; }
+    .barra .logo { display: inline-flex; align-items: center; min-height: 48px; }
+    .barra .logo img { height: 38px; width: auto; }
+    .barra nav { display: none; margin-left: auto; gap: 2px; }
+    .barra nav a {
+      font-family: var(--campo); font-weight: 600; font-size: .98rem; letter-spacing: .02em; text-decoration: none;
+      padding: 10px 12px; border-radius: 5px; color: var(--tinta);
+      transition: background-color .2s;
+    }
+    .barra .accion { display: none; min-height: 44px; padding: 10px 18px; font-size: .98rem; }
+
+    /* ---------- Hero: la placa de datos de Romave ---------- */
+    .hero { padding: 36px 0 64px; }
+    .hero-grid { display: grid; gap: 24px; }
+    .placa-hero { padding: 34px 26px 28px; }
+
+    .placa-hero h1 { margin-top: 4px; font-size: clamp(1.55rem, 3.3vw, 2.55rem); }
+    .placa-hero .bajada { margin-top: 14px; max-width: 38em; color: var(--tinta-2); font-size: 1.08rem; }
+    .placa-hero .campos { margin-top: 24px; }
+    .placa-hero .acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 26px; }
+    .enlace { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--campo); font-weight: 700; font-size: 1.02rem; text-decoration: underline; text-decoration-thickness: 1px; }
+
+    /* foto montada con cuatro tornillos */
+    .montada { position: relative; padding: 10px; background: var(--remaches), var(--aluminio); border: 1px solid var(--canto); border-radius: 7px;
+      box-shadow: 0 1px 1px rgba(21,25,30,.16), 0 3px 6px -2px rgba(21,25,30,.32); }
+    .montada img { width: 100%; height: auto; object-fit: cover; border-radius: 3px; border: 1px solid rgba(0,0,0,.25); }
+    .montada figcaption { font-family: var(--campo); font-weight: 600; font-size: .9rem; letter-spacing: .02em; padding: 10px 14px 4px; color: var(--tinta-2); }
+    .hero .montada { display: flex; flex-direction: column; }
+    .hero .montada img { flex: 1; min-height: 260px; aspect-ratio: 4 / 3; }
+
+    /* estampado de los valores al cargar: el único momento de movimiento orquestado */
+    .estampar .campos dd { animation: estampar 420ms var(--ease-out) both; animation-delay: calc(160ms + var(--i, 0) * 55ms); }
+    @keyframes estampar { from { opacity: 0; transform: translateY(4px); filter: blur(2px); } }
+
+    /* ---------- Secciones ---------- */
+    .seccion { padding: 72px 0; }
+    .seccion-titulo { max-width: 46rem; margin-bottom: 32px; }
+    .seccion-titulo h2 { font-size: clamp(1.35rem, 2.7vw, 2.05rem); }
+    .seccion-titulo p { margin-top: 12px; color: var(--tinta-2); font-size: 1.1rem; }
+
+    /* ---------- Diagrama de la obra (placa con diagrama grabado) ---------- */
+    .placa-diagrama { padding: 26px 18px 20px; }
+    .placa-diagrama .cabeza { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 0 8px 14px; border-bottom: 1px solid rgba(0,0,0,.16); }
+    .placa-diagrama svg { width: 100%; height: auto; display: block; margin-top: 12px; }
+    .placa-diagrama svg .layer { transition: opacity 200ms ease; }
+    .placa-diagrama svg[data-active] .layer { opacity: .13; }
+    .placa-diagrama svg[data-active] .layer.on { opacity: 1; }
+    .placa-diagrama svg .base { stroke: #7E878F; }
+    /* pilotos: la leyenda son lámparas piloto de tablero */
+    .pilotos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 10px; margin-top: 12px; padding: 0 6px; }
+    .piloto {
+      display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 8px; text-align: left;
+      font-family: var(--campo); font-weight: 600; font-size: 1rem; color: var(--tinta);
+      background: none; border: 0; border-radius: 5px; cursor: pointer;
+      transition: background-color .2s, transform 140ms var(--ease-out);
+    }
+    .piloto::before {
+      content: ""; width: 16px; height: 16px; border-radius: 50%; flex: none;
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.55), transparent 55%), color-mix(in srgb, var(--c) 55%, #3a3f45);
+      box-shadow: 0 0 0 2px #B9C0C7, 0 0 0 3px #7E878F, inset 0 1px 2px rgba(0,0,0,.35);
+      transition: background .2s, box-shadow .2s;
+    }
+    .piloto[aria-pressed="true"]::before {
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.8), transparent 55%), var(--c);
+      box-shadow: 0 0 0 2px #B9C0C7, 0 0 0 3px #7E878F, 0 0 12px 2px color-mix(in srgb, var(--c) 60%, transparent);
+    }
+    .piloto:active { transform: scale(.97); }
+    .diagrama-ayuda { font-size: .95rem; color: var(--tinta-2); padding: 12px 8px 0; }
+
+    /* ---------- Gerencias: placas de esmalte a color pleno ---------- */
+    .gerencias { display: grid; gap: 22px; margin-top: 28px; }
+    .gerencia { display: grid; gap: 22px; padding: 30px 24px 26px; }
+    .gerencia .montada { background: var(--remaches), var(--aluminio); }
+    .gerencia .montada img { aspect-ratio: 3 / 2; }
+    .gerencia h3 { font-size: clamp(1.25rem, 2.3vw, 1.7rem); }
+    .gerencia .texto > p { margin-top: 10px; font-size: 1.08rem; color: rgba(255,255,255,.9); max-width: 36em; }
+    .gerencia .campos { margin-top: 18px; }
+    .gerencia .campos dt { display: flex; align-items: center; gap: 8px; }
+    .gerencia .campos dt::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px rgba(255,255,255,.85); }
+    .gerencia .campos dd { font-weight: 500; }
+    .gerencia .acciones { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-top: 22px; }
+    .gerencia .enlace-diagrama { color: #fff; font-family: var(--campo); font-weight: 700; background: none; border: 0; cursor: pointer; font-size: 1rem; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; min-height: 44px; }
+
+    /* ---------- Ruta de obras norte-sur ---------- */
+    .ruta-grid { display: grid; gap: 24px; }
+    .ruta { position: relative; padding: 8px 0 8px 6px; }
+    .ruta::before { content: ""; position: absolute; left: 21px; top: 26px; bottom: 26px; width: 4px; border-radius: 2px; background: repeating-linear-gradient(180deg, var(--tinta) 0 10px, transparent 10px 16px); opacity: .55; }
+    .ruta li { position: relative; }
+    .parada {
+      display: grid; grid-template-columns: 32px 1fr; align-items: center; gap: 10px; width: 100%; min-height: 52px; padding: 6px 10px 6px 0;
+      text-align: left; background: none; border: 0; font: inherit; color: var(--tinta); border-radius: 6px;
+    }
+    .parada .marca { justify-self: center; width: 18px; height: 18px; border-radius: 50%; background: var(--gabinete); border: 3px solid var(--tinta); position: relative; z-index: 1; transition: transform 160ms var(--ease-out), background-color .2s; }
+    .parada .lugar { font-family: var(--campo); font-weight: 700; font-size: 1.05rem; line-height: 1.2; }
+    .parada .que { display: block; font-family: var(--texto); font-weight: 500; font-size: .95rem; color: var(--tinta-2); }
+    button.parada { cursor: pointer; transition: background-color .2s; }
+    button.parada[aria-pressed="true"] .marca { background: var(--rojo); border-color: var(--rojo); transform: scale(1.25); box-shadow: 0 0 0 4px rgba(191,30,45,.2); }
+    button.parada[aria-pressed="true"] .lugar { color: var(--rojo); }
+    .parada--oficina .marca { border-radius: 3px; background: var(--azul); border-color: var(--azul); width: 16px; height: 16px; }
+    .parada--oficina .lugar { font-weight: 600; }
+
+    .placa-obra { padding: 30px 24px 26px; display: grid; gap: 20px; align-content: start; }
+    .placa-obra h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
+    .placa-obra .cuerpo { display: grid; gap: 20px; }
+    .placa-obra .montada img { aspect-ratio: 16 / 10; }
+    .placa-obra .montada[hidden] { display: none; }
+    .placa-obra .cuerpo:has(> .montada[hidden]) { grid-template-columns: 1fr !important; }
+    .placa-obra .nota { font-size: .92rem; color: var(--tinta-2); }
+    /* cambio de obra: los valores se re-estampan (transición interrumpible) */
+    .placa-obra [data-campo] { transition: opacity 180ms var(--ease-out), filter 180ms var(--ease-out); }
+    .placa-obra.cambiando [data-campo] { opacity: 0; filter: blur(3px); }
+
+    /* ---------- Galería de más obras ---------- */
+    .galeria { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+    .galeria .montada img { aspect-ratio: 4 / 3; }
+    .galeria .montada figcaption { display: grid; gap: 4px; }
+    .galeria .montada figcaption span { display: flex; align-items: center; gap: 7px; font-weight: 500; font-size: .85rem; }
+    .galeria .montada figcaption span::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+
+    /* ---------- Muro de clientes: tablero de placas ---------- */
+    .clientes { background: var(--tablero); color: #E9ECEF; padding: 72px 0; position: relative;
+      background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1.2px); background-size: 5px 5px; }
+    .clientes .seccion-titulo p { color: #B9C1CA; }
+    .sector { margin-top: 34px; }
+    .sector > h3 { font-family: var(--campo); font-weight: 600; font-size: .85rem; letter-spacing: .09em; text-transform: uppercase; color: #AEB7C0; }
+    .placas-cliente { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+    .placa-cliente { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 76px; padding: 18px 16px;
+      font-family: var(--campo); font-weight: 700; font-size: 1.12rem; letter-spacing: .03em; line-height: 1.15; }
+    .placa-cliente small { display: block; font-weight: 500; font-size: .8rem; letter-spacing: .02em; color: var(--tinta-2); margin-top: 3px; }
+
+    /* ---------- CFE: diagrama unifilar de cuatro pasos ---------- */
+    .cfe-placa { padding: 34px 24px 28px; display: grid; gap: 26px; }
+    .cfe-placa h2 { font-size: clamp(1.3rem, 2.6vw, 1.95rem); }
+    .cfe-placa .bajada { margin-top: 12px; font-size: 1.08rem; color: rgba(255,255,255,.9); max-width: 34em; }
+    .unifilar { position: relative; display: grid; gap: 14px; counter-reset: paso; }
+    .unifilar li { counter-increment: paso; position: relative; display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: start; }
+    .unifilar li::before {
+      content: counter(paso); display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%;
+      font-family: var(--display); font-size: 1rem; color: var(--tinta);
+      background: var(--aluminio); border: 1px solid var(--canto); box-shadow: 0 3px 6px -3px rgba(0,0,0,.5);
+    }
+    .unifilar li:not(:last-child)::after { content: ""; position: absolute; left: 22px; top: 46px; bottom: -14px; width: 2px; background: rgba(255,255,255,.55); }
+    .unifilar strong { display: block; font-family: var(--campo); font-weight: 700; font-size: 1.12rem; }
+    .unifilar span { color: rgba(255,255,255,.85); }
+
+    /* ---------- Particulares ---------- */
+    .casa { padding: 32px 24px 28px; display: grid; gap: 22px; }
+    .casa h2 { font-size: clamp(1.25rem, 2.4vw, 1.8rem); }
+    .casa p { color: var(--tinta-2); margin-top: 10px; max-width: 38em; }
+
+    /* ---------- Contacto ---------- */
+    .contacto-grid { display: grid; gap: 16px; }
+    .oficina { padding: 26px 22px 22px; }
+    .oficina .ciudad { font-family: var(--display); font-size: 1.12rem; margin-top: 8px; line-height: 1.3; }
+    .oficina p { color: var(--tinta-2); margin-top: 4px; }
+    .contacto-accion { padding: 30px 24px 26px; display: grid; gap: 16px; align-content: start; }
+    .contacto-accion h2 { font-size: clamp(1.3rem, 2.6vw, 1.95rem); }
+    .contacto-accion p { color: rgba(255,255,255,.92); }
+    .contacto-accion .accion.placa { width: fit-content; }
+
+    /* ---------- Pie ---------- */
+    footer { padding: 34px 0 110px; }
+    .pie { display: grid; gap: 18px; padding: 24px 22px; }
+    .pie .fila { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; }
+    .redes { display: flex; flex-wrap: wrap; gap: 8px; }
+    .redes a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; border-radius: 5px; text-decoration: none;
+      font-family: var(--campo); font-weight: 600; color: var(--tinta); border: 1px solid var(--canto); background: rgba(255,255,255,.35); transition: background-color .2s; }
+    .redes svg { width: 18px; height: 18px; fill: currentColor; }
+    .pie small { color: var(--tinta-2); font-size: .9rem; }
+
+    /* botón flotante: placa roja de acción, solo en celular */
+    .flotante { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 40;
+      min-height: 54px; padding: 12px 20px; font-size: 1rem; }
+
+    /* ---------- Hover solo con mouse ---------- */
     @media (hover: hover) and (pointer: fine) {
-      .btn-primary:hover { background: var(--blue); }
-      .btn-line:hover { background: var(--navy); color: #fff; }
-      .leyenda button:hover { background: var(--paper); border-color: var(--line); }
-      .contacto .btn-primary:hover { background: #DCEBFA; }
-      .redes a:hover { background: rgba(255,255,255,.1); }
-      .secciones a:hover { background: var(--paper); }
+      .barra nav a:hover { background: rgba(255,255,255,.55); }
+      .accion.esmalte:hover { filter: brightness(1.08); }
+      .accion.placa:hover { filter: brightness(1.04); }
+      .piloto:hover { background: rgba(255,255,255,.45); }
+      button.parada:hover { background: rgba(255,255,255,.4); }
+      .redes a:hover { background: rgba(255,255,255,.7); }
     }
 
-    /* que el título de la sección no quede debajo del header fijo al hacer scroll */
-    section[id] { scroll-margin-top: 80px; }
-    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
-
+    /* ---------- Tableta ---------- */
     @media (min-width: 720px) {
-      .sectores { grid-template-columns: repeat(2, 1fr); }
-      .mini-corte { display: block; }
-      /* en pantallas grandes el header siempre está a la vista: el flotante sobra */
-      .wa-float { display: none; }
-      .nav { height: 76px; }
-      .nav img { height: 52px; }
-      .oficinas { grid-template-columns: repeat(3, 1fr); }
-      .obras { grid-template-columns: repeat(3, 1fr); }
-      .leyenda { grid-template-columns: repeat(3, 1fr); }
+      .campos--2 { grid-template-columns: 1fr 1fr; column-gap: 28px; }
+      .pilotos { grid-template-columns: repeat(3, 1fr); }
+      .galeria { grid-template-columns: repeat(3, 1fr); }
+      .galeria .ancha { grid-column: span 2; }
+      /* la ancha ocupa dos columnas con la misma altura que una foto 4:3 de una columna */
+      .galeria .ancha img { aspect-ratio: 21 / 8; }
+      .galeria { align-items: start; }
+      .placas-cliente { grid-template-columns: repeat(4, 1fr); }
+      .contacto-grid { grid-template-columns: repeat(3, 1fr); }
+      .contacto-accion { grid-column: 1 / -1; grid-template-columns: 1fr auto; align-items: center; }
+      .casa { grid-template-columns: 1fr auto; align-items: center; }
+      .placa-hero { padding: 40px 38px 34px; }
+      .gerencia, .placa-obra, .cfe-placa, .casa, .contacto-accion { padding-left: 34px; padding-right: 34px; }
+      .flotante { display: none; }
+      .barra .accion { display: inline-flex; margin-left: auto; }
     }
+    /* ---------- Escritorio ---------- */
     @media (min-width: 1000px) {
-      .hero { padding: 64px 0 80px; }
-      .hero-grid { grid-template-columns: 5fr 7fr; align-items: center; gap: 48px; }
-      .cfe-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
-      .sectores { grid-template-columns: repeat(4, 1fr); }
-      .gerencia { grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; padding: 56px 0; }
-      .gerencia:nth-of-type(even) .g-foto { order: 2; }
-      .secciones { display: flex; }
+      .barra .wrap { height: 72px; }
+      .barra .logo img { height: 44px; }
+      .barra nav { display: flex; }
+      .barra .accion { margin-left: 8px; }
+      .hero { padding: 48px 0 84px; }
+      .hero-grid { grid-template-columns: 7fr 5fr; align-items: stretch; gap: 28px; }
+      .gerencia { grid-template-columns: 5fr 7fr; gap: 36px; align-items: start; padding-top: 36px; padding-bottom: 32px; }
+      .gerencia:nth-child(even) .montada { order: 2; }
+      .ruta-grid { grid-template-columns: 4fr 8fr; gap: 32px; align-items: start; }
+      .placa-obra .cuerpo { grid-template-columns: 1fr 1fr; align-items: start; }
+      .placas-cliente { grid-template-columns: repeat(5, 1fr); }
+      .cfe-placa { grid-template-columns: 5fr 6fr; gap: 48px; padding: 44px 44px 40px; }
+      .seccion { padding: 96px 0; }
+      .clientes { padding: 96px 0; }
     }
-    /* plano en celular: el dibujo se ve al ~40%, así que el trazo se mide en pixeles de pantalla
-       y el panel usa todo el ancho para que lámparas, rociadores y cámara sigan legibles */
     @media (max-width: 719px) {
-      .plano { margin: 0 -20px; border-radius: 0; border-left: 0; border-right: 0; padding: 12px 8px 14px; }
-      .plano svg * { vector-effect: non-scaling-stroke; }
-      .plano-help, .leyenda { padding: 0 12px; }
-      /* en celular una sola llamada a WhatsApp: la flotante, que queda al alcance del pulgar */
-      .nav .btn { display: none; }
-    }
-    @media (max-width: 420px) {
-      .hero-actions .btn { width: 100%; }
+      /* en celular el trazo del diagrama se mide en pixeles de pantalla para que se lea */
+      .placa-diagrama svg * { vector-effect: non-scaling-stroke; }
+      .placa-diagrama { margin: 0 -10px; }
+      .hero-actions .accion, .placa-hero .acciones .accion { width: 100%; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn:active, .leyenda button:active, .wa-float:active { transform: none; }
+      .estampar .campos dd { animation: none; }
+      .accion:active, .piloto:active { transform: none; }
+      .placa-obra [data-campo] { transition: none; }
     }
+    section[id] { scroll-margin-top: 84px; }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="wrap nav">
-      <a href="#" aria-label="Romave, inicio"><img src="img/logo-romave.png" alt="Romave, construcciones eléctricas y civiles" width="774" height="204" /></a>
-      <nav class="secciones" aria-label="Secciones">
-        <a href="#especialidades">Especialidades</a>
-        <a href="#cfe">CFE</a>
+  <header class="barra">
+    <div class="wrap">
+      <a class="logo" href="#" aria-label="Romave, inicio"><img src="img/logo-romave.png" alt="Romave, construcciones eléctricas y civiles" width="774" height="204" /></a>
+      <nav aria-label="Secciones">
+        <a href="#gerencias">Gerencias</a>
         <a href="#obras">Obras</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#cfe">CFE</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a class="btn btn-primary" href="#" data-wa="Hola Romave, quiero cotizar un proyecto." target="_blank" rel="noopener">
+      <a class="accion esmalte esmalte--rojo" href="#" data-wa="Hola Romave, quiero cotizar una obra." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>
-        <span>Cotizar obra</span>
+        Cotizar obra
       </a>
     </div>
   </header>
 
   <main>
-    <!-- ========== HERO ========== -->
+    <!-- ========== HERO: la placa de datos de Romave ========== -->
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
-          <h1>Toda la obra, con un solo contratista.</h1>
-          <p class="lead">Construimos, instalamos y ponemos en marcha tiendas, naves industriales y aeropuertos en todo México desde hace 40 años: de la acometida con CFE al aire acondicionado.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#" data-wa="Hola Romave, quiero cotizar un proyecto." target="_blank" rel="noopener">
+        <div class="placa placa-hero" id="placa-hero">
+          <h1 class="grabado">Toda la obra, con un solo contratista.</h1>
+          <p class="bajada grabado">Construimos, instalamos y ponemos en marcha tiendas, naves industriales, aeropuertos y casas. De la acometida con CFE al aire acondicionado, con las mismas manos.</p>
+          <dl class="campos campos--2 grabado">
+            <div><dt>Años en obra</dt><dd style="--i:0">40</dd></div>
+            <div><dt>Cobertura</dt><dd style="--i:1">Todo México</dd></div>
+            <div><dt>Gerencias</dt><dd style="--i:2">Eléctrica, civil y electromecánica</dd></div>
+            <div><dt>Ante CFE</dt><dd style="--i:3">Gestión y certificación en media y alta tensión</dd></div>
+            <div><dt>Oficinas</dt><dd style="--i:4">Pachuca, Ciudad de México y Querétaro</dd></div>
+            <div><dt>Atención</dt><dd style="--i:5">Lunes a viernes, de 9:00 a 18:30</dd></div>
+          </dl>
+          <div class="acciones">
+            <a class="accion esmalte esmalte--rojo" href="#" data-wa="Hola Romave, quiero cotizar una obra." target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>
-              Cotizar por WhatsApp
+              Solicitar cotización por WhatsApp
             </a>
-            <a class="btn btn-line" href="#especialidades">Ver especialidades</a>
+            <a class="enlace grabado" href="#obras">Ver obras entregadas</a>
           </div>
         </div>
 
-        <figure class="plano">
+        <figure class="montada">
+          <img src="img/estructura-acero-sm.jpg" srcset="img/estructura-acero-sm.jpg 700w, img/estructura-acero.jpg 812w" sizes="(min-width: 1000px) 40vw, 100vw" alt="Estructura de acero de una nave comercial levantada por Romave, con muro de block en construcción" width="700" height="539" fetchpriority="high" />
+          <figcaption>Estructura de acero para nave comercial</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== GERENCIAS ========== -->
+    <section class="seccion" id="gerencias" aria-labelledby="gerencias-titulo">
+      <div class="wrap">
+        <div class="seccion-titulo">
+          <h2 id="gerencias-titulo" class="grabado">Tres gerencias, una sola obra</h2>
+          <p>Cada instalación de una nave tiene su gerencia en Romave. Toca una especialidad para verla en el diagrama.</p>
+        </div>
+
+        <figure class="placa placa-diagrama" id="diagrama">
+          <figcaption class="cabeza">
+            <span class="etiqueta grabado">Diagrama de la obra</span>
+            <span class="etiqueta grabado">Corte de una nave comercial</span>
+          </figcaption>
           <svg id="corte" viewBox="0 112 820 356" role="img" aria-labelledby="corte-titulo" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <title id="corte-titulo">Corte de una nave comercial con las seis especialidades de Romave: eléctrica, civil, mecánica, sistemas especiales, hidrosanitaria y HVAC</title>
             <!-- terreno -->
@@ -393,158 +557,241 @@
               <path class="stroke" d="M632 334 H656 M632 346 H656 M632 358 H656 M632 370 H656" stroke-width="1.5" />
             </g>
           </svg>
-          <p class="plano-help" id="plano-help">Toca una especialidad para verla en el corte de la obra.</p>
-          <div class="leyenda" role="group" aria-labelledby="plano-help">
-            <button type="button" data-layer="electrica" style="--c:var(--c-electrica)" aria-pressed="false">Eléctrica</button>
-            <button type="button" data-layer="civil" style="--c:var(--c-civil)" aria-pressed="false">Civil</button>
-            <button type="button" data-layer="mecanica" style="--c:var(--c-mecanica)" aria-pressed="false">Mecánica</button>
-            <button type="button" data-layer="especiales" style="--c:var(--c-especiales)" aria-pressed="false">Sistemas especiales</button>
-            <button type="button" data-layer="hidro" style="--c:var(--c-hidro)" aria-pressed="false">Hidrosanitaria</button>
-            <button type="button" data-layer="hvac" style="--c:var(--c-hvac)" aria-pressed="false">HVAC</button>
+          <div class="pilotos" role="group" aria-label="Especialidades del diagrama">
+            <button type="button" class="piloto" data-layer="electrica" style="--c:var(--c-electrica)" aria-pressed="false">Eléctrica</button>
+            <button type="button" class="piloto" data-layer="civil" style="--c:var(--c-civil)" aria-pressed="false">Civil</button>
+            <button type="button" class="piloto" data-layer="mecanica" style="--c:var(--c-mecanica)" aria-pressed="false">Mecánica</button>
+            <button type="button" class="piloto" data-layer="especiales" style="--c:var(--c-especiales)" aria-pressed="false">Sistemas especiales</button>
+            <button type="button" class="piloto" data-layer="hidro" style="--c:var(--c-hidro)" aria-pressed="false">Hidrosanitaria</button>
+            <button type="button" class="piloto" data-layer="hvac" style="--c:var(--c-hvac)" aria-pressed="false">HVAC</button>
           </div>
         </figure>
+
+        <div class="gerencias">
+          <article class="gerencia esmalte esmalte--rojo" aria-labelledby="g-electrica">
+            <figure class="montada"><img src="img/tableros-baja-tension-sm.jpg" srcset="img/tableros-baja-tension-sm.jpg 700w, img/tableros-baja-tension.jpg 816w" sizes="(min-width: 1000px) 40vw, 100vw" alt="Ingeniero de Romave revisando un tablero eléctrico de baja tensión" width="700" height="467" loading="lazy" /></figure>
+            <div class="texto">
+              <h3 id="g-electrica">Gerencia eléctrica</h3>
+              <p>De la subestación al último contacto. Hacemos la obra eléctrica y resolvemos los trámites ante CFE para que recibas la instalación energizada.</p>
+              <dl class="campos">
+                <div style="--c:var(--c-electrica)"><dt>Eléctrica</dt><dd>Media tensión, baja tensión, obra y gestión con CFE.</dd></div>
+              </dl>
+              <div class="acciones">
+                <a class="accion placa" href="#" data-wa="Hola Romave, quiero cotizar una obra eléctrica." target="_blank" rel="noopener">Cotizar obra eléctrica</a>
+                <button type="button" class="enlace-diagrama" data-capas="electrica">Ver en el diagrama</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gerencia esmalte esmalte--azul" aria-labelledby="g-civil">
+            <figure class="montada"><img src="img/nave-concreto-sm.jpg" alt="Nave comercial con piso de concreto pulido recién terminado" width="700" height="538" loading="lazy" /></figure>
+            <div class="texto">
+              <h3 id="g-civil">Gerencia civil</h3>
+              <p>Levantamos la obra completa: estructura, muros, pisos, acabados y el estacionamiento listo para abrir. También construimos casas.</p>
+              <dl class="campos">
+                <div style="--c:#8FB3E6"><dt>Civil</dt><dd>Estructura de acero, concreto, albañilería, acabados y pavimentaciones.</dd></div>
+              </dl>
+              <div class="acciones">
+                <a class="accion placa" href="#" data-wa="Hola Romave, quiero cotizar una obra civil." target="_blank" rel="noopener">Cotizar obra civil</a>
+                <button type="button" class="enlace-diagrama" data-capas="civil">Ver en el diagrama</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="gerencia esmalte esmalte--verde" aria-labelledby="g-electromecanica">
+            <figure class="montada"><img src="img/hvac-azotea-sm.jpg" srcset="img/hvac-azotea-sm.jpg 700w, img/hvac-azotea.jpg 859w" sizes="(min-width: 1000px) 40vw, 100vw" alt="Cuadrilla de Romave instalando un equipo de aire acondicionado en azotea" width="700" height="408" loading="lazy" /></figure>
+            <div class="texto">
+              <h3 id="g-electromecanica">Gerencia electromecánica</h3>
+              <p>Todo lo que hace funcionar el edificio por dentro, instalado junto con la obra y no como un parche al final.</p>
+              <dl class="campos campos--2">
+                <div style="--c:var(--c-mecanica)"><dt>Mecánica</dt><dd>Montaje y desmontaje, rigging (maniobras de izaje) y puesta en marcha de maquinaria.</dd></div>
+                <div style="--c:#B79AE0"><dt>Sistemas especiales</dt><dd>Circuito cerrado de televisión, voz y datos, alarmas y detección de humo.</dd></div>
+                <div style="--c:var(--c-hidro)"><dt>Hidrosanitaria</dt><dd>Hidráulica, sanitaria y protección contra incendios.</dd></div>
+                <div style="--c:#6FD1B2"><dt>HVAC</dt><dd>Aire acondicionado, calefacción, ventilación y refrigeración.</dd></div>
+              </dl>
+              <div class="acciones">
+                <a class="accion placa" href="#" data-wa="Hola Romave, quiero cotizar una instalación electromecánica." target="_blank" rel="noopener">Cotizar obra electromecánica</a>
+                <button type="button" class="enlace-diagrama" data-capas="mecanica especiales hidro hvac">Ver en el diagrama</button>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ========== CLIENTES ========== -->
-    <section class="clientes" aria-labelledby="clientes-titulo">
+    <!-- ========== RUTA DE OBRAS NORTE-SUR ========== -->
+    <section class="seccion" id="obras" aria-labelledby="obras-titulo" style="padding-top:0">
       <div class="wrap">
-        <h2 id="clientes-titulo">Nuestros clientes en 40 años de obra</h2>
-        <dl class="sectores">
-          <div><dt>Tiendas y autoservicio</dt><dd>Walmart, Coppel, Soriana, Elektra y HEB</dd></div>
-          <div><dt>Aeropuertos</dt><dd>Grupos aeroportuarios GAP, OMA y ASUR</dd></div>
-          <div><dt>Industria e infraestructura</dt><dd>CAF, Talleres y Cocheras y MMSC</dd></div>
-          <div><dt>Vivienda</dt><dd>Construcción de casas</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- ========== ESPECIALIDADES: tres gerencias ========== -->
-    <section class="bloque" id="especialidades" aria-labelledby="esp-titulo">
-      <div class="wrap">
-        <div class="intro">
-          <h2 id="esp-titulo">Tres gerencias, una sola obra</h2>
-          <p class="lead">Coordinamos todas las instalaciones de tu obra para que no tengas que perseguir a cinco contratistas distintos.</p>
+        <div class="seccion-titulo">
+          <h2 id="obras-titulo" class="grabado">Obras de norte a sur</h2>
+          <p>Algunas obras que Romave ha entregado en el país, ordenadas de norte a sur junto con nuestras tres oficinas. Elige una parada para leer su placa.</p>
         </div>
 
-        <article class="gerencia" data-capas="electrica" aria-labelledby="g-electrica">
-          <figure class="g-foto"><img src="img/tableros-baja-tension-sm.jpg" srcset="img/tableros-baja-tension-sm.jpg 700w, img/tableros-baja-tension.jpg 816w" sizes="(min-width: 900px) 45vw, 100vw" alt="Técnico de Romave revisando un tablero eléctrico de baja tensión" width="700" height="467" loading="lazy" /></figure>
-          <div class="g-texto">
-            <h3 id="g-electrica">Gerencia eléctrica</h3>
-            <p>Desde la subestación hasta el último contacto, con la obra y los trámites ante CFE resueltos por nosotros.</p>
-            <dl class="disciplinas">
-              <div style="--c:var(--c-electrica)"><dt>Eléctrica</dt><dd>Media tensión, baja tensión, obra y gestión con CFE.</dd></div>
-            </dl>
-            <a class="btn btn-line" href="#" data-wa="Hola Romave, quiero cotizar un proyecto eléctrico." target="_blank" rel="noopener">Cotizar obra eléctrica</a>
-          </div>
-        </article>
+        <div class="ruta-grid">
+          <ol class="ruta" aria-label="Ruta de obras y oficinas">
+            <li><button type="button" class="parada" data-obra="ge" aria-pressed="true"><span class="marca"></span><span><span class="lugar">Guadalupe, N.L.</span><span class="que">General Electric</span></span></button></li>
+            <li><button type="button" class="parada" data-obra="tamazunchale" aria-pressed="false"><span class="marca"></span><span><span class="lugar">Tamazunchale, S.L.P.</span><span class="que">Mi Bodega Aurrera</span></span></button></li>
+            <li><div class="parada parada--oficina"><span class="marca"></span><span><span class="lugar">Santiago de Querétaro</span><span class="que">Oficina Romave</span></span></div></li>
+            <li><button type="button" class="parada" data-obra="tepatepec" aria-pressed="false"><span class="marca"></span><span><span class="lugar">Tepatepec, Hgo.</span><span class="que">Mi Bodega Aurrera</span></span></button></li>
+            <li><div class="parada parada--oficina"><span class="marca"></span><span><span class="lugar">Pachuca, Hgo.</span><span class="que">Oficina Romave</span></span></div></li>
+            <li><div class="parada parada--oficina"><span class="marca"></span><span><span class="lugar">Gustavo A. Madero, CDMX</span><span class="que">Oficina Romave</span></span></div></li>
+            <li><button type="button" class="parada" data-obra="biopapel" aria-pressed="false"><span class="marca"></span><span><span class="lugar">Naucalpan, Edomex</span><span class="que">Bio Papel</span></span></button></li>
+          </ol>
 
-        <article class="gerencia" data-capas="civil" aria-labelledby="g-civil">
-          <figure class="g-foto"><img src="img/estructura-acero-sm.jpg" srcset="img/estructura-acero-sm.jpg 700w, img/estructura-acero.jpg 812w" sizes="(min-width: 900px) 45vw, 100vw" alt="Estructura de acero de una nave comercial en construcción" width="700" height="539" loading="lazy" /></figure>
-          <div class="g-texto">
-            <h3 id="g-civil">Gerencia civil</h3>
-            <p>Levantamos la obra completa: estructura, muros, pisos y el estacionamiento listo para abrir.</p>
-            <dl class="disciplinas">
-              <div style="--c:var(--c-civil)"><dt>Civil</dt><dd>Estructura de acero, concreto, albañilería, acabados y pavimentaciones.</dd></div>
-            </dl>
-            <a class="btn btn-line" href="#" data-wa="Hola Romave, quiero cotizar una obra civil." target="_blank" rel="noopener">Cotizar obra civil</a>
-          </div>
-        </article>
+          <article class="placa placa-obra grabado" id="placa-obra" aria-live="polite">
+            <h3 data-campo="cliente">General Electric</h3>
+            <div class="cuerpo">
+              <dl class="campos">
+                <div><dt>Obra</dt><dd data-campo="obra">Planta Oil &amp; Gas</dd></div>
+                <div><dt>Lugar</dt><dd data-campo="lugar">Guadalupe, Nuevo León</dd></div>
+                <div><dt>Sector</dt><dd data-campo="sector">Industria</dd></div>
+              </dl>
+              <figure class="montada" data-campo="foto" hidden>
+                <img src="img/tienda-terminada-sm.jpg" alt="" width="700" height="314" loading="lazy" />
+                <figcaption data-campo="pie"></figcaption>
+              </figure>
+            </div>
+            <p class="nota" data-campo="nota">Planta industrial en el área metropolitana de Monterrey.</p>
+          </article>
+        </div>
 
-        <article class="gerencia" data-capas="mecanica especiales hidro hvac" aria-labelledby="g-electromecanica">
-          <figure class="g-foto"><img src="img/hvac-azotea-sm.jpg" srcset="img/hvac-azotea-sm.jpg 700w, img/hvac-azotea.jpg 859w" sizes="(min-width: 900px) 45vw, 100vw" alt="Cuadrilla de Romave instalando un equipo de aire acondicionado en azotea" width="700" height="408" loading="lazy" /></figure>
-          <div class="g-texto">
-            <h3 id="g-electromecanica">Gerencia electromecánica</h3>
-            <p>Todo lo que hace funcionar el edificio por dentro, instalado junto con la obra y no como un parche al final.</p>
-            <dl class="disciplinas">
-              <div style="--c:var(--c-mecanica)"><dt>Mecánica</dt><dd>Montaje y desmontaje, rigging (maniobras de izaje) y puesta en marcha de maquinaria.</dd></div>
-              <div style="--c:var(--c-especiales)"><dt>Sistemas especiales</dt><dd>Circuito cerrado de televisión (CCTV), voz y datos, alarmas y detección de humo.</dd></div>
-              <div style="--c:var(--c-hidro)"><dt>Hidrosanitaria</dt><dd>Hidráulica, sanitaria y contra incendios.</dd></div>
-              <div style="--c:var(--c-hvac)"><dt>HVAC</dt><dd>Aire acondicionado, calefacción, ventilación y refrigeración.</dd></div>
-            </dl>
-            <a class="btn btn-line" href="#" data-wa="Hola Romave, quiero cotizar una instalación electromecánica." target="_blank" rel="noopener">Cotizar obra electromecánica</a>
-          </div>
-        </article>
+        <div class="galeria">
+          <figure class="montada ancha"><img src="img/tableros-electricos-sm.jpg" alt="Tableros de distribución en baja tensión instalados en muro" width="700" height="445" loading="lazy" /><figcaption>Tableros de distribución en baja tensión<span style="--c:var(--c-electrica)">Eléctrica</span></figcaption></figure>
+          <figure class="montada"><img src="img/deteccion-incendio-sm.jpg" alt="Paneles de detección de incendio y estación manual de alarma" width="700" height="521" loading="lazy" /><figcaption>Detección de humo y alarma contra incendio<span style="--c:var(--c-especiales)">Sistemas especiales</span></figcaption></figure>
+          <figure class="montada"><img src="img/ventilacion-azotea-sm.jpg" alt="Equipos de ventilación y extracción en azotea" width="700" height="544" loading="lazy" /><figcaption>Ventilación y extracción en azotea<span style="--c:var(--c-hvac)">HVAC</span></figcaption></figure>
+          <figure class="montada ancha"><img src="img/sanitarios-acabados-sm.jpg" alt="Sanitarios terminados con mingitorios y mamparas verdes" width="700" height="393" loading="lazy" /><figcaption>Sanitarios con acabados terminados<span style="--c:var(--c-hidro)">Hidrosanitaria</span></figcaption></figure>
+          <figure class="montada ancha"><img src="img/cctv-sm.jpg" alt="Monitor con las cámaras de circuito cerrado de una tienda" width="700" height="522" loading="lazy" /><figcaption>Circuito cerrado de televisión en tienda<span style="--c:var(--c-especiales)">Sistemas especiales</span></figcaption></figure>
+          <figure class="montada"><img src="img/nave-industrial-sm.jpg" alt="Nave industrial terminada con maquinaria instalada" width="700" height="383" loading="lazy" /><figcaption>Nave industrial con maquinaria instalada<span style="--c:var(--c-mecanica)">Mecánica</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CLIENTES: tablero de placas ========== -->
+    <section class="clientes" id="clientes" aria-labelledby="clientes-titulo">
+      <div class="wrap">
+        <div class="seccion-titulo">
+          <h2 id="clientes-titulo">Quién ya confió su obra a Romave</h2>
+          <p>Diecinueve empresas en 40 años, atendidas con personal técnico calificado y la estabilidad financiera para sostener obras en todo el país.</p>
+        </div>
+
+        <div class="sector">
+          <h3>Autoservicio y tiendas</h3>
+          <ul class="placas-cliente">
+            <li class="placa placa-cliente grabado">Walmart</li>
+            <li class="placa placa-cliente grabado">Sam's Club</li>
+            <li class="placa placa-cliente grabado">Bodega Aurrera</li>
+            <li class="placa placa-cliente grabado">Soriana</li>
+            <li class="placa placa-cliente grabado">HEB</li>
+            <li class="placa placa-cliente grabado">Coppel</li>
+            <li class="placa placa-cliente grabado">Elektra</li>
+            <li class="placa placa-cliente grabado">Suburbia</li>
+          </ul>
+        </div>
+        <div class="sector">
+          <h3>Consumo y restaurantes</h3>
+          <ul class="placas-cliente">
+            <li class="placa placa-cliente grabado">Coca-Cola</li>
+            <li class="placa placa-cliente grabado">KFC</li>
+          </ul>
+        </div>
+        <div class="sector">
+          <h3>Aeropuertos</h3>
+          <ul class="placas-cliente">
+            <li class="placa placa-cliente grabado"><span>GAP<small>Grupo Aeroportuario del Pacífico</small></span></li>
+            <li class="placa placa-cliente grabado"><span>OMA<small>Grupo Aeroportuario Centro Norte</small></span></li>
+            <li class="placa placa-cliente grabado"><span>ASUR<small>Grupo Aeroportuario del Sureste</small></span></li>
+          </ul>
+        </div>
+        <div class="sector">
+          <h3>Industria e infraestructura</h3>
+          <ul class="placas-cliente">
+            <li class="placa placa-cliente grabado">General Electric</li>
+            <li class="placa placa-cliente grabado">Peñoles</li>
+            <li class="placa placa-cliente grabado">Bio Papel</li>
+            <li class="placa placa-cliente grabado">CAF</li>
+            <li class="placa placa-cliente grabado">Talleres y Cocheras</li>
+            <li class="placa placa-cliente grabado">MMSC</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!-- ========== CFE ========== -->
-    <section class="bloque cfe" id="cfe" aria-labelledby="cfe-titulo">
-      <div class="wrap cfe-grid">
-        <div>
-          <h2 id="cfe-titulo">Tu conexión con CFE, sin que tengas que ir a CFE</h2>
-          <p class="lead" style="margin-top:14px">Gestionamos tu acometida en media tensión de principio a fin. Tú recibes la instalación energizada.</p>
+    <section class="seccion" id="cfe" aria-labelledby="cfe-titulo">
+      <div class="wrap">
+        <div class="esmalte esmalte--azul cfe-placa">
+          <div>
+            <h2 id="cfe-titulo">Tu conexión con CFE, sin que tengas que ir a CFE</h2>
+            <p class="bajada">Gestionamos tu acometida de principio a fin y contamos con certificación ante CFE en media y alta tensión. Tú recibes la instalación energizada.</p>
+            <div style="margin-top:22px">
+              <a class="accion placa" href="#" data-wa="Hola Romave, necesito ayuda con un trámite o una acometida ante CFE." target="_blank" rel="noopener">Consultar mi trámite con CFE</a>
+            </div>
+          </div>
+          <ol class="unifilar">
+            <li><div><strong>Proyecto</strong><span>Diseñamos la instalación con los requisitos de CFE.</span></div></li>
+            <li><div><strong>Trámites</strong><span>Ingresamos la solicitud y le damos seguimiento.</span></div></li>
+            <li><div><strong>Obra</strong><span>Construimos la subestación y la acometida.</span></div></li>
+            <li><div><strong>Entrega</strong><span>Coordinamos la revisión y la conexión con CFE.</span></div></li>
+          </ol>
         </div>
-        <ol class="pasos">
-          <li><div><strong>Proyecto</strong><span>Diseñamos la instalación con los requisitos de CFE.</span></div></li>
-          <li><div><strong>Trámites</strong><span>Ingresamos y damos seguimiento a la solicitud.</span></div></li>
-          <li><div><strong>Obra</strong><span>Construimos la subestación y la acometida.</span></div></li>
-          <li><div><strong>Entrega</strong><span>Coordinamos la revisión y la conexión con CFE.</span></div></li>
-        </ol>
       </div>
     </section>
 
-    <!-- ========== OBRAS ========== -->
-    <section class="bloque" id="obras" aria-labelledby="obras-titulo">
+    <!-- ========== PARTICULARES ========== -->
+    <section class="seccion" aria-labelledby="casa-titulo" style="padding-top:0">
       <div class="wrap">
-        <div class="intro">
-          <h2 id="obras-titulo">Obras terminadas</h2>
-          <p class="lead">Algunos de los proyectos que hemos entregado en el país.</p>
-        </div>
-        <!-- Cada ficha está lista para sumar datos reales cuando Romave los envíe:
-             <span class="dato">Cliente · Ciudad, Estado · Año</span> y una cifra (m², kVA, días de obra).
-             No inventar: solo datos confirmados por el cliente. -->
-        <div class="obras">
-          <figure class="ancha"><img src="img/tienda-terminada-sm.jpg" srcset="img/tienda-terminada-sm.jpg 700w, img/tienda-terminada.jpg 1400w" sizes="(min-width: 1200px) 1160px, 100vw" alt="Tienda de autoservicio terminada y en operación" width="700" height="314" loading="lazy" />
-            <figcaption><strong>Tienda de autoservicio terminada</strong><ul class="tags"><li style="--c:var(--c-civil)">Civil</li></ul></figcaption></figure>
-          <figure><img src="img/nave-concreto-sm.jpg" alt="Nave comercial con piso de concreto pulido en obra" width="700" height="538" loading="lazy" />
-            <figcaption><strong>Piso de concreto pulido en nave comercial</strong><ul class="tags"><li style="--c:var(--c-civil)">Civil</li></ul></figcaption></figure>
-          <figure><img src="img/montaje-maquinaria-sm.jpg" alt="Línea de producción industrial montada dentro de una nave" width="700" height="525" loading="lazy" />
-            <figcaption><strong>Montaje de línea de producción</strong><ul class="tags"><li style="--c:var(--c-mecanica)">Mecánica</li></ul></figcaption></figure>
-          <figure><img src="img/tableros-electricos-sm.jpg" alt="Tableros eléctricos de distribución instalados en muro" width="700" height="445" loading="lazy" />
-            <figcaption><strong>Tableros de distribución en baja tensión</strong><ul class="tags"><li style="--c:var(--c-electrica)">Eléctrica</li></ul></figcaption></figure>
-          <figure><img src="img/ventilacion-azotea-sm.jpg" alt="Equipos de ventilación y extracción en azotea" width="700" height="544" loading="lazy" />
-            <figcaption><strong>Ventilación y extracción en azotea</strong><ul class="tags"><li style="--c:var(--c-hvac)">HVAC</li></ul></figcaption></figure>
-          <figure><img src="img/sanitarios-acabados-sm.jpg" alt="Sanitarios terminados con mingitorios y mamparas" width="700" height="393" loading="lazy" />
-            <figcaption><strong>Sanitarios con acabados terminados</strong><ul class="tags"><li style="--c:var(--c-hidro)">Hidrosanitaria</li><li style="--c:var(--c-civil)">Civil</li></ul></figcaption></figure>
-          <figure><img src="img/deteccion-incendio-sm.jpg" alt="Paneles de detección de incendio y estación manual de alarma" width="700" height="521" loading="lazy" />
-            <figcaption><strong>Detección de humo y alarma contra incendio</strong><ul class="tags"><li style="--c:var(--c-especiales)">Sistemas especiales</li></ul></figcaption></figure>
+        <div class="placa casa grabado">
+          <div>
+            <h2 id="casa-titulo">¿Vas a construir tu casa?</h2>
+            <p>La gerencia civil de Romave también construye vivienda, con el mismo equipo que hace las instalaciones eléctricas e hidrosanitarias y los acabados. Un solo responsable de principio a fin.</p>
+          </div>
+          <a class="accion esmalte esmalte--azul" href="#" data-wa="Hola Romave, quiero platicar sobre la construcción de mi casa." target="_blank" rel="noopener">Platicar sobre mi casa</a>
         </div>
       </div>
     </section>
 
     <!-- ========== CONTACTO ========== -->
-    <section class="bloque contacto" id="contacto" aria-labelledby="contacto-titulo">
+    <section class="seccion" id="contacto" aria-labelledby="contacto-titulo" style="padding-top:0">
       <div class="wrap">
-        <h2 id="contacto-titulo">¿Tienes una obra en puerta?</h2>
-        <p class="lead" style="margin-top:14px">Mándanos qué quieres construir, en qué ciudad y para cuándo. Te respondemos por WhatsApp.</p>
-        <ul class="oficinas">
-          <li><strong>Pachuca</strong><span>Hidalgo</span></li>
-          <li><strong>Gustavo A. Madero</strong><span>Ciudad de México</span></li>
-          <li><strong>Santiago de Querétaro</strong><span>Querétaro</span></li>
-        </ul>
-        <p class="lead" style="margin-bottom:24px">Obras en todo el país. Atendemos de lunes a viernes, de 9:00 a 18:30.</p>
-        <a class="btn btn-primary" href="#" data-wa="Hola Romave, quiero cotizar una obra." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>
-          Cotizar por WhatsApp
-        </a>
+        <div class="contacto-grid">
+          <div class="esmalte esmalte--rojo contacto-accion">
+            <div>
+              <h2 id="contacto-titulo">¿Tienes una obra en puerta?</h2>
+              <p style="margin-top:10px">Mándanos qué quieres construir, en qué ciudad y para cuándo. Te responde una persona del equipo, por WhatsApp.</p>
+            </div>
+            <a class="accion placa" href="#" data-wa="Hola Romave, quiero cotizar una obra." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>
+              442 592 3227
+            </a>
+          </div>
+          <div class="placa oficina grabado"><span class="etiqueta">Oficina</span><p class="ciudad">Pachuca</p><p>Hidalgo</p></div>
+          <div class="placa oficina grabado"><span class="etiqueta">Oficina</span><p class="ciudad">Gustavo A. Madero</p><p>Ciudad de México</p></div>
+          <div class="placa oficina grabado"><span class="etiqueta">Oficina</span><p class="ciudad">Santiago de Querétaro</p><p>Querétaro</p></div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap foot">
-      <p>© <span id="anio">2026</span> Romave. Construcciones eléctricas y civiles.</p>
-      <div class="redes">
-        <a href="https://www.facebook.com/RomaveMX/" aria-label="Facebook de Romave" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.76 0-5 2.24-5 5v2H7v4h2v9h4v-9h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
-        <a href="https://www.instagram.com/romavemx/" aria-label="Instagram de Romave" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.2 2.2 2.2 4.2 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.7 2.1 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.7-.1 5.7-2.1 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.7-2.1-5.7-5.8-5.8C15 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1 2.7.1 4 1.4 4.1 4.1.1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.7-1.4 4-4.1 4.1-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.7-.1-4-1.4-4.1-4.1-.1-1-.1-1.3-.1-4s0-3 .1-4C4 5.3 5.3 4 8 3.9c1 0 1.3-.1 4-.1z"/></svg></a>
-        <a href="https://twitter.com/gruporomave" aria-label="X (Twitter) de Romave" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg></a>
+    <div class="wrap">
+      <div class="placa pie grabado">
+        <div class="fila">
+          <img src="img/logo-romave.png" alt="Romave" width="774" height="204" style="height:40px;width:auto" />
+          <div class="redes">
+            <a href="https://open.spotify.com/show/2kDYtlNfNlfEg2HmCFyns2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 9.9 1.1.3.2.4.6.3.9zm1.2-2.7a.8.8 0 0 1-1.1.3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 1 1-.5-1.5c3.7-1.1 8.4-.6 11.5 1.3.4.3.5.8.3 1.1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a1 1 0 1 1-.6-1.9c3.5-1.1 9.4-.9 13.2 1.4a1 1 0 0 1-1 1.7z"/></svg>Podcast</a>
+            <a href="https://www.facebook.com/RomaveMX/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.76 0-5 2.24-5 5v2H7v4h2v9h4v-9h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg>Facebook</a>
+            <a href="https://www.instagram.com/romavemx/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.2 2.2 2.2 4.2 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.7 2.1 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.7-.1 5.7-2.1 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.7-2.1-5.7-5.8-5.8C15 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1 2.7.1 4 1.4 4.1 4.1.1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.7-1.4 4-4.1 4.1-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.7-.1-4-1.4-4.1-4.1-.1-1-.1-1.3-.1-4s0-3 .1-4C4 5.3 5.3 4 8 3.9c1 0 1.3-.1 4-.1z"/></svg>Instagram</a>
+            <a href="https://twitter.com/gruporomave" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg>X</a>
+          </div>
+        </div>
+        <small>© <span id="anio">2026</span> Romave. Construcciones eléctricas y civiles. Pachuca, Ciudad de México y Querétaro.</small>
       </div>
     </div>
   </footer>
 
-  <a class="wa-float" href="#" data-wa="Hola Romave, quiero cotizar un proyecto." target="_blank" rel="noopener" aria-label="Escribir a Romave por WhatsApp">
+  <a class="accion esmalte esmalte--rojo flotante" href="#" data-wa="Hola Romave, quiero cotizar una obra." target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>
+    Cotizar
   </a>
 
   <script>
@@ -553,52 +800,72 @@
     document.querySelectorAll("[data-wa]").forEach(el => {
       el.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(el.dataset.wa)}`;
     });
-
     document.getElementById("anio").textContent = new Date().getFullYear();
 
-    // Corte de obra: resaltar la especialidad elegida
+    const menosMovimiento = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Estampado de la placa principal al cargar
+    if (!menosMovimiento) document.getElementById("placa-hero").classList.add("estampar");
+
+    // ---- Diagrama: pilotos que encienden capas ----
     const corte = document.getElementById("corte");
-    const botones = document.querySelectorAll(".leyenda button");
+    const pilotos = document.querySelectorAll(".piloto");
     const capas = corte.querySelectorAll(".layer");
-    function activar(nombre) {
-      const mismo = corte.dataset.active === nombre;
-      if (mismo || !nombre) delete corte.dataset.active; else corte.dataset.active = nombre;
-      const activa = corte.dataset.active;
-      capas.forEach(c => c.classList.toggle("on", c.dataset.layer === activa));
-      botones.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.layer === activa)));
+    function encender(lista) {
+      const mismas = corte.dataset.active === lista.join(" ");
+      if (mismas || !lista.length) delete corte.dataset.active; else corte.dataset.active = lista.join(" ");
+      const activas = corte.dataset.active ? corte.dataset.active.split(" ") : [];
+      capas.forEach(c => c.classList.toggle("on", activas.includes(c.dataset.layer)));
+      pilotos.forEach(p => p.setAttribute("aria-pressed", String(activas.includes(p.dataset.layer))));
     }
-    botones.forEach(b => b.addEventListener("click", () => activar(b.dataset.layer)));
+    pilotos.forEach(p => p.addEventListener("click", () => encender([p.dataset.layer])));
+    document.querySelectorAll(".enlace-diagrama").forEach(b => b.addEventListener("click", () => {
+      const lista = b.dataset.capas.split(" ");
+      if (corte.dataset.active !== lista.join(" ")) encender(lista);
+      document.getElementById("diagrama").scrollIntoView({ behavior: menosMovimiento ? "auto" : "smooth", block: "center" });
+    }));
 
-    // Mini corte por gerencia: copia del plano del hero con sus capas encendidas
-    document.querySelectorAll(".gerencia[data-capas]").forEach(g => {
-      const encendidas = g.dataset.capas.split(" ");
-      const copia = corte.cloneNode(true);
-      copia.removeAttribute("id");
-      copia.removeAttribute("role");
-      copia.removeAttribute("aria-labelledby");
-      copia.setAttribute("aria-hidden", "true");
-      copia.querySelector("title")?.remove();
-      copia.querySelectorAll(".layer").forEach(c => c.classList.toggle("on", encendidas.includes(c.dataset.layer)));
-      const marco = document.createElement("div");
-      marco.className = "mini-corte";
-      marco.appendChild(copia);
-      g.querySelector("h3").after(marco);
-    });
-
-    // Trazo del plano al cargar: un solo momento de movimiento, capa por capa.
-    // Se omite si el usuario prefiere menos movimiento.
-    if (!matchMedia("(prefers-reduced-motion: reduce)").matches && corte.animate) {
-      corte.querySelectorAll(".stroke").forEach(el => {
-        const largo = el.getTotalLength();
-        const capa = el.closest(".layer");
-        const retraso = capa ? parseFloat(getComputedStyle(capa).getPropertyValue("--d")) || 0 : 0;
-        el.animate(
-          [{ strokeDasharray: `${largo} ${largo}`, strokeDashoffset: largo },
-           { strokeDasharray: `${largo} ${largo}`, strokeDashoffset: 0 }],
-          { duration: 900, delay: retraso * 1000, easing: "cubic-bezier(0.23, 1, 0.32, 1)", fill: "backwards" }
-        );
-      });
+    // ---- Ruta de obras: cada parada cambia la placa de obra ----
+    const OBRAS = {
+      ge: { num: "Parada 1 de 4", titulo: "Planta Oil & Gas", cliente: "General Electric", obra: "Planta Oil & Gas", lugar: "Guadalupe, Nuevo León", sector: "Industria",
+            nota: "Planta industrial en el área metropolitana de Monterrey." },
+      tamazunchale: { num: "Parada 2 de 4", titulo: "Mi Bodega Aurrera", cliente: "Mi Bodega Aurrera", obra: "Tienda de autoservicio", lugar: "Tamazunchale, San Luis Potosí", sector: "Autoservicio",
+            foto: "img/tienda-terminada-sm.jpg", alt: "Tienda Bodega Aurrera terminada y en operación", pie: "Tienda Bodega Aurrera, foto de archivo de Romave",
+            nota: "Obra en la Huasteca potosina." },
+      tepatepec: { num: "Parada 3 de 4", titulo: "Mi Bodega Aurrera", cliente: "Mi Bodega Aurrera", obra: "Tienda de autoservicio", lugar: "Tepatepec, Hidalgo", sector: "Autoservicio",
+            foto: "img/tienda-terminada-sm.jpg", alt: "Tienda Bodega Aurrera terminada y en operación", pie: "Tienda Bodega Aurrera, foto de archivo de Romave",
+            nota: "Obra en el Valle del Mezquital, Hidalgo." },
+      biopapel: { num: "Parada 4 de 4", titulo: "Línea corrugadora", cliente: "Bio Papel", obra: "Instalación de corrugadora", lugar: "Naucalpan, Estado de México", sector: "Industria",
+            foto: "img/montaje-maquinaria-sm.jpg", alt: "Línea corrugadora instalada dentro de una nave con rollos de papel", pie: "Línea corrugadora, foto de archivo de Romave",
+            nota: "Montaje de maquinaria industrial." }
+    };
+    const placaObra = document.getElementById("placa-obra");
+    const paradas = document.querySelectorAll("button.parada");
+    const campo = n => placaObra.querySelector(`[data-campo="${n}"]`);
+    let tiempoCambio;
+    function mostrarObra(id) {
+      const o = OBRAS[id];
+      paradas.forEach(p => p.setAttribute("aria-pressed", String(p.dataset.obra === id)));
+      const aplicar = () => {
+        ["cliente", "obra", "lugar", "sector", "nota"].forEach(k => campo(k).textContent = o[k]);
+        const foto = campo("foto");
+        if (o.foto) { const img = foto.querySelector("img"); img.src = o.foto; img.alt = o.alt; campo("pie").textContent = o.pie; foto.hidden = false; }
+        else foto.hidden = true;
+        placaObra.classList.remove("cambiando");
+      };
+      clearTimeout(tiempoCambio);
+      if (menosMovimiento) return aplicar();
+      placaObra.classList.add("cambiando");
+      tiempoCambio = setTimeout(aplicar, 180);
     }
+    paradas.forEach(p => p.addEventListener("click", () => mostrarObra(p.dataset.obra)));
+    // flechas arriba/abajo recorren las paradas
+    paradas.forEach((p, i) => p.addEventListener("keydown", e => {
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      e.preventDefault();
+      const sig = paradas[(i + (e.key === "ArrowDown" ? 1 : paradas.length - 1)) % paradas.length];
+      sig.focus(); mostrarObra(sig.dataset.obra);
+    }));
   </script>
 </body>
 </html>
